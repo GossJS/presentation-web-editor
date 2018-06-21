@@ -58,10 +58,10 @@
 	},
 	"scripts": {
 		"clean": "rm -rf dist",
-		"package": "npm run prod && cd dist && electron-packager . editor --platform=win32 --arch=ia32 --out=build",
+		"build": "npm run prod && cd dist && electron-packager . editor --platform=win32 --arch=ia32 --out=build",
 		"package-overwrite": "electron-packager . editor --overwrite",
 		"package-overwrite-asar": "electron-packager . editor --overwrite --asar",
-		"package-all": "npm run prod && cd dist && electron-packager . editor --platform=all --arch=all --out=dist",
+		"build-all": "npm run prod && cd dist && electron-packager . editor --platform=all --arch=all --out=dist",
 		"start": "npm run prod && cd dist && electron .",
 		"prod": "babel-node tools/run build"
 	}
