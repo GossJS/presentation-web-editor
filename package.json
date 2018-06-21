@@ -1,0 +1,69 @@
+{
+	"name": "Presentation Web-editor",
+	"version": "1.2.0",
+	"dependencies": {
+		"fs-extra": "^6.0.1",
+		"markdown-it": "^8.4.1",
+		"markdown-it-classy": "^0.2.0",
+		"markdown-it-container": "^2.0.0",
+		"markdown-it-modify-token": "^1.0.2",
+		"markdown-it-synapse-table": "^1.0.6",
+		"react": "^16.2.0",
+		"react-dom": "^16.2.0",
+		"react-helmet": "^5.2.0",
+		"react-redux": "^5.0.7",
+		"react-scroll-sync": "^0.5.0",
+		"redux": "^4.0.0",
+		"redux-thunk": "^2.3.0",
+		"reveal.js": "^3.6.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.0.0-beta.51",
+		"@babel/node": "^7.0.0-beta.51",
+		"@babel/preset-env": "^7.0.0-beta.51",
+		"@babel/preset-react": "^7.0.0-beta.51",
+		"@babel/preset-stage-0": "^7.0.0-beta.51",
+		"babel-eslint": "^8.2.3",
+		"babel-loader": "^8.0.0-beta.3",
+		"babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+		"electron": "^2.0.2",
+		"electron-packager": "^12.1.0",
+		"eslint": "^4.19.1",
+		"eslint-config-airbnb": "^16.1.0",
+		"eslint-plugin-import": "^2.12.0",
+		"eslint-plugin-jsx-a11y": "^6.0.3",
+		"eslint-plugin-react": "^7.9.1",
+		"file-loader": "^1.1.11",
+		"json-loader": "^0.5.7",
+		"webpack": "^3.10.0",
+		"webpack-bundle-analyzer": "^2.13.1"
+	},
+	"license": "VLC",
+	"main": "lib/main.js",
+	"private": true,
+	"babel": {
+		"presets": [
+			"@babel/preset-env",
+			[
+				"@babel/preset-stage-0",
+				{
+					"decoratorsLegacy": true
+				}
+			]
+		],
+		"ignore": [
+			"node_modules",
+			"dist"
+		]
+	},
+	"scripts": {
+		"clean": "rm -rf dist",
+		"package": "npm run prod && cd dist && electron-packager . editor --platform=win32 --arch=ia32 --out=build",
+		"package-overwrite": "electron-packager . editor --overwrite",
+		"package-overwrite-asar": "electron-packager . editor --overwrite --asar",
+		"package-all": "electron-packager . editor --platform=all --arch=all --out=dist",
+		"start": "npm run prod && cd dist && electron .",
+		"dev": "webpack --watch",
+		"prod": "babel-node tools/run build"
+	}
+}

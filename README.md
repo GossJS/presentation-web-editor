@@ -1,2 +1,5 @@
-# presentation-web-editor
-Web-editor app for presentation with reveals.js framework. 
+# Apollo Editor
+
+###Разработка:
+Создание и тестирование веб-редактора - Дэвид Давид
+Перевод и тестирование - Александр Жуйков
